@@ -14,11 +14,15 @@ struct MenuItemDetailView: View {
     var body: some View {
         VStack {
             VStack(spacing: 8) {
-                Image(systemName: "photo.on.rectangle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 260, height: 200)
-                    .foregroundStyle(.blue)
+                AsyncImage(url: menuItem.imageURL, content: { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxWidth: .infinity, maxHeight: 200)
+                        .foregroundStyle(.blue)
+                }, placeholder: {
+                    Image(systemName: "photo.on.rectangle")
+                })
 
                 HStack {
                     Text(menuItem.name)

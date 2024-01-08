@@ -58,7 +58,7 @@ class MenuService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let menuIdsDict = ["MenuIds": ids]
+        let menuIdsDict = ["menuIds": ids]
         let encoder = JSONEncoder()
         let jsonData = try? encoder.encode(menuIdsDict)
         request.httpBody = jsonData

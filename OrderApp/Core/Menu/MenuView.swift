@@ -16,6 +16,14 @@ struct MenuView: View {
             ForEach(viewModel.menuItems) { menuItem in
                 NavigationLink(value: menuItem) {
                     HStack {
+                        AsyncImage(url: menuItem.imageURL) { image in
+                            image.resizable()
+                                .scaledToFit()
+                                .frame(width: 44)
+                        } placeholder: {
+                            Image(systemName: "photo.on.rectangle")
+                        }
+
                         Text(menuItem.name)
                         Spacer()
                         Text(menuItem.price.formatted(.currency(code: "usd")))

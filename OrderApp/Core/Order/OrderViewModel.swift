@@ -10,6 +10,32 @@ import Foundation
 @Observable
 final class OrderViewModel {
     var order = Order()
+    var minutesToPrepare: Int = 0
+    var isErrorPresent = false
+
+    func uploadOrder() async {
+        let menuIds = menuItems.map(\.id)
+        do {
+            let minutesToPrepare = try await MenuService.shared.postOrder(forMenuIds: menuIds)
+            self.minutesToPrepare = minutesToPrepare
+
+        } catch {
+            print(error.localizedDescription)
+            isErrorPresent = true
+        }
+    }
+
+    func reset() {
+        order.menuItems.removeAll()
+        minutesToPrepare = 0
+        isErrorPresent = false
+    }
+
+    func calculateTotal() -> Double {
+        order.menuItems.reduce(0.0) { result, menuItem in
+            result + menuItem.price
+        }
+    }
 
     var menuItems: [MenuItem] {
         order.menuItems

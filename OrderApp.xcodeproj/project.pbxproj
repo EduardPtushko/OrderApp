@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		D3225E942B3A047700B05F97 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3225E932B3A047700B05F97 /* MenuService.swift */; };
 		D3225E962B3A067A00B05F97 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3225E952B3A067A00B05F97 /* MenuViewModel.swift */; };
+		D32E80A12B3DE6040042ED8E /* OrderConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32E80A02B3DE6040042ED8E /* OrderConfirmationView.swift */; };
 		D33902872B3B47B200095B13 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33902862B3B47B200095B13 /* CategoryViewModel.swift */; };
 		D3698CEE2B3891BE0031CF28 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3698CED2B3891BE0031CF28 /* OrderView.swift */; };
 		D36CB7E42B3CA9750052BE0A /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36CB7E32B3CA9750052BE0A /* OrderViewModel.swift */; };
 		D3A0233B2B387B74003631EA /* OrderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0233A2B387B74003631EA /* OrderAppApp.swift */; };
-		D3A0233D2B387B74003631EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0233C2B387B74003631EA /* ContentView.swift */; };
+		D3A0233D2B387B74003631EA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0233C2B387B74003631EA /* RootView.swift */; };
 		D3A0233F2B387B75003631EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A0233E2B387B75003631EA /* Assets.xcassets */; };
 		D3A023422B387B75003631EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A023412B387B75003631EA /* Preview Assets.xcassets */; };
 		D3A023522B389081003631EA /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A023512B389081003631EA /* MenuItem.swift */; };
@@ -27,12 +28,13 @@
 /* Begin PBXFileReference section */
 		D3225E932B3A047700B05F97 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		D3225E952B3A067A00B05F97 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		D32E80A02B3DE6040042ED8E /* OrderConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationView.swift; sourceTree = "<group>"; };
 		D33902862B3B47B200095B13 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		D3698CED2B3891BE0031CF28 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		D36CB7E32B3CA9750052BE0A /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		D3A023372B387B74003631EA /* OrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A0233A2B387B74003631EA /* OrderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppApp.swift; sourceTree = "<group>"; };
-		D3A0233C2B387B74003631EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D3A0233C2B387B74003631EA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D3A0233E2B387B75003631EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3A023412B387B75003631EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3A023502B389053003631EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		D3225E982B3A162000B05F97 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D3A0233C2B387B74003631EA /* ContentView.swift */,
+				D3A0233C2B387B74003631EA /* RootView.swift */,
 				D36CB7E02B3CA2A40052BE0A /* Category */,
 				D36CB7E52B3CB01F0052BE0A /* Menu */,
 				D36CB7E22B3CA2DE0052BE0A /* Order */,
@@ -106,6 +108,7 @@
 				D3A023552B3890F5003631EA /* Order.swift */,
 				D3698CED2B3891BE0031CF28 /* OrderView.swift */,
 				D36CB7E32B3CA9750052BE0A /* OrderViewModel.swift */,
+				D32E80A02B3DE6040042ED8E /* OrderConfirmationView.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -238,8 +241,9 @@
 			files = (
 				D3A0235A2B38913C003631EA /* MenuItemDetailView.swift in Sources */,
 				D3A023522B389081003631EA /* MenuItem.swift in Sources */,
+				D32E80A12B3DE6040042ED8E /* OrderConfirmationView.swift in Sources */,
 				D3A023582B38911E003631EA /* MenuView.swift in Sources */,
-				D3A0233D2B387B74003631EA /* ContentView.swift in Sources */,
+				D3A0233D2B387B74003631EA /* RootView.swift in Sources */,
 				D33902872B3B47B200095B13 /* CategoryViewModel.swift in Sources */,
 				D3A023562B3890F5003631EA /* Order.swift in Sources */,
 				D3225E962B3A067A00B05F97 /* MenuViewModel.swift in Sources */,
