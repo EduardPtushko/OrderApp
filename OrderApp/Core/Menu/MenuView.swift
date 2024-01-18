@@ -14,7 +14,7 @@ struct MenuView: View {
     var body: some View {
         List {
             ForEach(viewModel.menuItems) { menuItem in
-                NavigationLink(value: menuItem) {
+                NavigationLink(value: Route.menuItem(item: menuItem)) {
                     HStack {
                         AsyncImage(url: menuItem.imageURL) { image in
                             image.resizable()
@@ -31,8 +31,8 @@ struct MenuView: View {
                 }
             }
         }
-        .navigationDestination(for: MenuItem.self) { menuItem in
-            MenuItemDetailView(menuItem: menuItem)
+        .navigationDestination(for: Route.self) { route in
+            route.destination
         }
         .listStyle(.inset)
         .navigationBarTitleDisplayMode(.inline)

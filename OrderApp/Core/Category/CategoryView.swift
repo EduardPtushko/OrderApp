@@ -9,18 +9,20 @@ import SwiftUI
 
 struct CategoryView: View {
     @State private var viewModel = CategoryViewModel()
+    @Environment(NavigationRouter.self) var router
 
     var body: some View {
-        NavigationStack {
+        @Bindable var router = router
+        NavigationStack(path: $router.paths) {
             List {
                 ForEach(viewModel.categories, id: \.self) { category in
-                    NavigationLink(value: category) {
+                    NavigationLink(value: Route.category(item: category)) {
                         Text(category)
                     }
                 }
             }
-            .navigationDestination(for: String.self) { category in
-                MenuView(category: category)
+            .navigationDestination(for: Route.self) { route in
+                route.destination
             }
             .listStyle(.inset)
             .navigationTitle("Restaurant")
@@ -38,4 +40,5 @@ struct CategoryView: View {
 
 #Preview {
     CategoryView()
+        .environment(NavigationRouter())
 }

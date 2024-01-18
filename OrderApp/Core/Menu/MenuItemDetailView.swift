@@ -30,6 +30,7 @@ struct MenuItemDetailView: View {
                     Text(menuItem.price.formatted(.currency(code: "usd")))
                 }
                 .padding(.top)
+
                 Text(menuItem.detailText)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }

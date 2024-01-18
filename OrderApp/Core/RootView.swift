@@ -9,30 +9,29 @@ import SwiftUI
 
 struct RootView: View {
     @SceneStorage("selectedTab")
-    private var selectedTab = 0
+    private var selectedTab: AppScreen = .categories
     let orderViewModel = OrderViewModel()
+    let navigationRouter = NavigationRouter()
 
     var body: some View {
-        TabView(selection: $selectedTab) {
-            CategoryView()
-                .tabItem {
-                    Text("Menu")
-                    Image(systemName: "list.bullet")
-                }
-                .tag(0)
-
-            OrderView()
-                .tabItem {
-                    Text("Your Order")
-                    Image(systemName: "bag")
-                }
-                .tag(1)
-                .badge(orderViewModel.menuItems.count)
-        }
-        .environment(orderViewModel)
+        AppTabView(selection: $selectedTab)
+            .environment(orderViewModel)
+            .environment(navigationRouter)
+            .environment(\.selected, $selectedTab)
     }
 }
 
 #Preview {
     RootView()
+}
+
+private struct SelectedKey: EnvironmentKey {
+    static let defaultValue: Binding<AppScreen> = .constant(.categories)
+}
+
+extension EnvironmentValues {
+    var selected: Binding<AppScreen> {
+        get { self[SelectedKey.self] }
+        set { self[SelectedKey.self] = newValue }
+    }
 }
